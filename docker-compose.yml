@@ -11,6 +11,17 @@ services:
       - .:/app
       - bundle:/usr/local/bundle
     container_name: eonext-base-dev
+    depends_on:
+      - db
+  db:
+    image: mariadb:10.4.3
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+    ports:
+      - "13306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
 
 volumes:
   bundle:
+  mysql_data:
