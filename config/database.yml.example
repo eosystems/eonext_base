@@ -6,6 +6,7 @@ development:
   timeout: 5000
   username: root
   password:
+  host: db
   collation: utf8_bin
 
 test:
@@ -16,6 +17,7 @@ test:
   timeout: 5000
   username: root
   password:
+  host: db
   collation: utf8_bin
 
 production:
@@ -26,5 +28,6 @@ production:
   timeout: 5000
   username: root
   password:
+  host: db
   collation: utf8_bin
 
