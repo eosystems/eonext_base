@@ -10,7 +10,7 @@ services:
     volumes:
       - .:/app
       - bundle:/usr/local/bundle
-    container_name: eonext-base-dev
+    container_name: eonext-base-app-dev
     depends_on:
       - db
   db:
@@ -21,6 +21,7 @@ services:
       - "13306:3306"
     volumes:
       - mysql_data:/var/lib/mysql
+    container_name: eonext-base-db-dev
 
 volumes:
   bundle:
