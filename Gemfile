@@ -12,6 +12,7 @@ gem 'devise'
 
 gem 'ransack'
 gem 'rabl'
+gem 'rest-client'
 gem 'faraday'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
