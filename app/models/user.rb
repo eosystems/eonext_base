@@ -15,26 +15,7 @@
 #
 
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :rememberable, :trackable, :validatable, :omniauthable
   has_one :user_detail
-
-  def self.find_for_eve_online_oauth(auth)
-    user = User.find_by(provider: auth.provider, uid: auth.uid)
-    unless user
-      user = User.create(
-        name: auth.info.character_name,
-        provider: auth.provider,
-        uid: auth.uid,
-        token: auth.credentials.token,
-        password: Devise.friendly_token[0, 20]
-      )
-    end
-    user
-  end
-
-  def email_required?
-    false
-  end
 
   def self.user_token(user)
     return if user.expire.nil?
