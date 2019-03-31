@@ -1,24 +1,33 @@
-# README
+# 環境構築
+## Docker Desktop インストール
+https://hub.docker.com/editions/community/docker-ce-desktop-mac
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## リポジトリダウンロード
+git clone https://github.com/eosystems/eonext_base
 
-Things you may want to cover:
+## DB設定
+cp config/database.yml.example config/database.yml
 
-* Ruby version
+## eonext_baseに移動後にRails, DBの構築
+```
+docker-compose build
+docker-compose run api bundle exec rake db:create
+docker-compose run api bundle exec rake db:migrate
+```
 
-* System dependencies
+## 起動
+```
+docker-compose up -d
+```
 
-* Configuration
+localhost:3001 に接続できること
 
-* Database creation
+## コンソール
+```
+docker-compose run api bundle exec rails console
+User.count
+```
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## DB確認
+Sequel Pro インストール
+![image](https://user-images.githubusercontent.com/3175028/54863435-eb995c00-4d8b-11e9-932a-b39436da25b3.png)
