@@ -17,6 +17,7 @@ gem 'faraday'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'activerecord-import'
+gem 'settingslogic'
 
 group :development do
   gem 'spring'
