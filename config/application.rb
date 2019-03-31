@@ -33,5 +33,17 @@ module App
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+    config.time_zone = 'Tokyo'
+
+    # Do not swallow errors in after_commit/after_rollback callbacks.
+    config.active_job.queue_adapter = :delayed_job
+    config.autoload_paths +=%W(#{config.root}/lib)
+
+    config.generators do |g|
+      g.helper false
+      g.stylesheets false
+      g.javascripts false
+    end
+
   end
 end

@@ -1,8 +1,16 @@
 class EsiClient
-  ESI_API_BASE_URL = 'https://esi.evetech.net/latest'.freeze
+  EVE_LOGIN_BASE_URL = 'https://login.eveonline.com'.freeze
+  ESI_API_BASE_URL = ENV['EVEONLINE_ESI_BASE'].freeze
 
   def initialize(token)
     @token = token
+  end
+
+  def fetch_verify
+    path = EVE_LOGIN_BASE_URL + "/oauth/verify"
+    Rails.logger.info("ESIClient Access to #{path}")
+
+    GeneralEsiResponse.parse_simple(get_request_to(path))
   end
 
   def fetch_character(character_id)
@@ -45,7 +53,7 @@ class EsiClient
     conn = build_api_connection
     conn.get do |req|
       req.url path
-      req.headers['Authorization'] = "bearer #{@token}"
+      req.headers['Authorization'] = "Bearer #{@token}"
     end
   end
 
