@@ -263,7 +263,6 @@ GEM
       rspec-support (~> 3.8.0)
     rspec-support (3.8.0)
     ruby_dep (1.5.0)
-    settingslogic (2.0.9)
     shellany (0.0.1)
     slop (3.6.0)
     spring (2.0.2)
@@ -323,7 +322,6 @@ DEPENDENCIES
   rest-client
   rspec
   rspec-rails
-  settingslogic
   spring
 
 BUNDLED WITH
