@@ -26,7 +26,6 @@ public/uploads/
 config/dev_database.yml
 config/environment.yml
 config/database.yml
-config/settings.yml
 
 public/sitemap.xml.gz
 public/robots.txt
