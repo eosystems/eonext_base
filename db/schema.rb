@@ -38,20 +38,11 @@ ActiveRecord::Schema.define(version: 0) do
   create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
     t.string "uid", null: false
     t.string "name"
-    t.string "token"
+    t.integer "sign_in_count", default: 0, null: false
     t.string "refresh_token"
     t.datetime "expire"
-    t.string "encrypted_password", default: "", null: false
-    t.string "provider", null: false
-    t.string "email", default: ""
-    t.string "reset_password_token", default: ""
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.integer "sign_in_count", default: 0, null: false
-    t.datetime "current_sign_in_at"
-    t.datetime "last_sign_in_at"
-    t.string "current_sign_in_ip", default: "", null: false
-    t.string "last_sign_in_ip", default: "", null: false
+    t.string "login_token"
+    t.string "access_token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -2,25 +2,16 @@
 #
 # Table name: users
 #
-#  id                     :integer          not null, primary key
-#  uid                    :string(255)      not null
-#  name                   :string(255)
-#  token                  :string(255)
-#  refresh_token          :string(255)
-#  expire                 :datetime
-#  encrypted_password     :string(255)      default(""), not null
-#  provider               :string(255)      not null
-#  email                  :string(255)      default("")
-#  reset_password_token   :string(255)      default("")
-#  reset_password_sent_at :datetime
-#  remember_created_at    :datetime
-#  sign_in_count          :integer          default(0), not null
-#  current_sign_in_at     :datetime
-#  last_sign_in_at        :datetime
-#  current_sign_in_ip     :string(255)      default(""), not null
-#  last_sign_in_ip        :string(255)      default(""), not null
-#  created_at             :datetime         not null
-#  updated_at             :datetime         not null
+#  id            :integer          not null, primary key
+#  uid           :string(255)      not null
+#  name          :string(255)
+#  sign_in_count :integer          default(0), not null
+#  refresh_token :string(255)
+#  expire        :datetime
+#  login_token   :string(255)
+#  access_token  :string(255)
+#  created_at    :datetime         not null
+#  updated_at    :datetime         not null
 #
 
 class User < ActiveRecord::Base
