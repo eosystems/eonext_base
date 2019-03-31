@@ -4,7 +4,7 @@ class ApplicationController < ActionController::API
   private
 
   def authenticate
-    token = request.headers[:EONEXT_LOGIN_TOKEN]
+    token = request.headers["X-EONEXT-LOGIN-TOKEN"]
     if token.present?
       u = User.find_by(login_token: token)
       @current_resource_owner = u if u.present?
