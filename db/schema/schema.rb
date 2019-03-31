@@ -6,8 +6,12 @@ end
 
 create_table :users, collate: "utf8_bin" do |t|
   t.int :id, primary_key: true, extra: :auto_increment
-  t.varchar :uid
+  t.varchar :character_id, null: true
   t.varchar :name, null: true
+  t.int :corporation_id, null: true
+  t.int :alliance_id, null: true
+  t.boolean :is_main, null: true
+  t.int :main_character_id, null: true
   t.int :sign_in_count, default: 0
   t.varchar :login_token, null:true
   t.varchar :access_token, null:true
@@ -17,13 +21,23 @@ create_table :users, collate: "utf8_bin" do |t|
   t.datetime :updated_at
 end
 
-create_table :user_details, collate: "utf8_bin" do |t|
-  t.int :id, primary_key: true, extra: :auto_increment
-  t.int :user_id
-  t.int :corporation_id, null: true
-  t.int :alliance_id, null: true
-  t.varchar :key_id, null: true
-  t.varchar :verification_code, null: true
+create_table :corporations, collate: "utf8_bin" do |t|
+  t.int :corporation_id, primary_key: true
+  t.varchar :corporation_name
+  t.datetime :created_at
+  t.datetime :updated_at
+end
+
+create_table :corporation_relations, collate: "utf8_bin" do |t|
+  t.int :id, primary_key: true, extra: 'auto_increment'
+  t.int :ancestor
+  t.int :descendant
+
+  t.datetime :created_at, null: true
+  t.datetime :updated_at, null: true
+
+  t.index :ancestor
+  t.index :descendant
 end
 
 create_table :delayed_jobs, comment: 'Delayed Job' do |t|

@@ -12,6 +12,21 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "corporation_relations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
+    t.integer "ancestor", null: false
+    t.integer "descendant", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.index ["ancestor"], name: "index_corporation_relations_on_ancestor"
+    t.index ["descendant"], name: "index_corporation_relations_on_descendant"
+  end
+
+  create_table "corporations", primary_key: "corporation_id", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
+    t.string "corporation_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "delayed_jobs", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT", comment: "Delayed Job", force: :cascade do |t|
     t.integer "priority", default: 0, null: false
     t.integer "attempts", default: 0, null: false
@@ -27,22 +42,18 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["priority", "run_at"], name: "delayed_jobs_priority"
   end
 
-  create_table "user_details", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
+    t.string "character_id"
+    t.string "name"
     t.integer "corporation_id"
     t.integer "alliance_id"
-    t.string "key_id"
-    t.string "verification_code"
-  end
-
-  create_table "users", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
-    t.string "uid", null: false
-    t.string "name"
+    t.boolean "is_main"
+    t.integer "main_character_id"
     t.integer "sign_in_count", default: 0, null: false
-    t.string "refresh_token"
-    t.datetime "expire"
     t.string "login_token"
     t.string "access_token"
+    t.string "refresh_token"
+    t.datetime "expire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

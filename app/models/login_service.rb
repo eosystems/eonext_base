@@ -1,5 +1,6 @@
 class LoginService
-  class LoginError < StandardError end;
+  class LoginError < StandardError; end
+
   include ActiveModel::Model
   attr_accessor :access_token, :refresh_token
 
