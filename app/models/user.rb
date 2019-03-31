@@ -19,7 +19,7 @@
 #
 
 class User < ActiveRecord::Base
-  has_one :user_detail
+  belongs_to :corporation
 
   def self.user_token(user)
     return if user.expire.nil?
