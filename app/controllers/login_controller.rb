@@ -1,17 +1,20 @@
-class LoginController < ApiController
+class LoginController < ApplicationController
+  skip_before_action :authenticate
+
   def create
-    l = LoginService.new(login_params)
+    l = LoginService.new(params: login_params)
     begin
       user = l.login
-      serializer = UserLoginSerializer.new(user, options).serialized_json
+      serializer = UserLoginSerializer.new(user).serialized_json
       render json: serializer
     rescue => e
+      render json: { error_message: e.message }
     end
   end
 
   private
 
   def login_params
-    params.permit(:access_token, :refresh_token)
+    params.require(:login).permit(:access_token, :refresh_token)
   end
 end
