@@ -134,6 +134,9 @@ GEM
     http_parser.rb (0.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
+    jbuilder (2.8.0)
+      activesupport (>= 4.2.0)
+      multi_json (>= 1.2)
     jwt (2.1.0)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -308,6 +311,7 @@ DEPENDENCIES
   guard
   guard-livereload
   guard-rspec
+  jbuilder (~> 2.5)
   mysql2
   omniauth-eveonline
   omniauth-oauth2

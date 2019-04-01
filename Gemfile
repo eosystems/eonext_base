@@ -12,6 +12,7 @@ gem 'devise'
 
 gem 'ransack'
 gem 'rabl'
+gem 'jbuilder', '~> 2.5'
 gem 'rest-client'
 gem 'faraday'
 gem 'delayed_job'
