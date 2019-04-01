@@ -18,7 +18,7 @@
 #  updated_at        :datetime         not null
 #
 
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   belongs_to :corporation
 
   def self.user_token(user)
