@@ -11,13 +11,14 @@ gem "omniauth-eveonline"
 gem 'devise'
 
 gem 'ransack'
-gem 'rabl'
-gem 'jbuilder', '~> 2.5'
 gem 'rest-client'
 gem 'faraday'
 gem 'delayed_job'
 gem 'delayed_job_active_record'
 gem 'activerecord-import'
+
+# Json生成 https://github.com/Netflix/fast_jsonapi
+gem 'fast_jsonapi'
 
 group :development do
   gem 'spring'
