@@ -16,6 +16,7 @@ cp .env.template .env
 docker-compose build
 docker-compose run api bundle exec rake db:create
 docker-compose run api bundle exec rake db:migrate
+docker-compose run api bundle install
 ```
 
 ## 起動
