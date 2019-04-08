@@ -1,4 +1,4 @@
-class LoginController < ApplicationController
+class LoginController < BaseController
   skip_before_action :authenticate
 
   def create
@@ -15,6 +15,7 @@ class LoginController < ApplicationController
   private
 
   def login_params
+    # FIXME: 動かない
     params.require(:login).permit(:access_token, :refresh_token)
   end
 end
