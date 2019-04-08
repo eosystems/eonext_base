@@ -8,6 +8,9 @@ git clone https://github.com/eosystems/eonext_base
 ## DB設定
 cp config/database.yml.example config/database.yml
 
+## 環境変数
+cp .env.template .env
+
 ## eonext_baseに移動後にRails, DBの構築
 ```
 docker-compose build
