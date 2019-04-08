@@ -10,6 +10,7 @@ gem "omniauth-oauth2"
 gem "omniauth-eveonline"
 gem 'devise'
 
+gem 'rack-cors'
 gem 'ransack'
 gem 'rest-client'
 gem 'faraday'

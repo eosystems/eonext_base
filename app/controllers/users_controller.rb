@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < BaseController
   def show
     user = User.find(params[:id])
     if user == @current_resource_owner
