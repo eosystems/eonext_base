@@ -1,5 +1,5 @@
 class OptionsRequestController < ApplicationController
-  ACCESS_CONTROL_ALLOW_METHODS = %w(GET OPTIONS).freeze
+  ACCESS_CONTROL_ALLOW_METHODS = %w(GET OPTIONS PUT DELETE POST).freeze
   ACCESS_CONTROL_ALLOW_HEADERS = %w(Accept Origin Content-Type Authorization).freeze
 
   def preflight

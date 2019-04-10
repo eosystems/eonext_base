@@ -44,6 +44,5 @@ module App
       g.stylesheets false
       g.javascripts false
     end
-
   end
 end
