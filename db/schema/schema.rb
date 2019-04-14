@@ -15,7 +15,7 @@ create_table :users, collate: "utf8_bin" do |t|
   t.int :sign_in_count, default: 0
   t.varchar :login_token, null:true
   t.varchar :access_token, null:true
-  t.varchar :refresh_token, null:true
+  t.text :refresh_token, null:true
   t.datetime :expire, null:true
   t.datetime :created_at
   t.datetime :updated_at

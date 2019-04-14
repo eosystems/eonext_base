@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.integer "sign_in_count", default: 0, null: false
     t.string "login_token"
     t.string "access_token"
-    t.string "refresh_token"
+    t.text "refresh_token"
     t.datetime "expire"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
