@@ -12,6 +12,19 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
+  create_table "assets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.boolean "is_singleton"
+    t.bigint "item_id"
+    t.string "location_flag"
+    t.bigint "location_id"
+    t.string "location_type"
+    t.integer "quantity"
+    t.integer "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "corporation_relations", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
     t.integer "ancestor", null: false
     t.integer "descendant", null: false
