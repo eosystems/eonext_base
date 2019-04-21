@@ -21,6 +21,19 @@ create_table :users, collate: "utf8_bin" do |t|
   t.datetime :updated_at
 end
 
+create_table :assets, collate: "utf8_bin" do |t|
+  t.int :id, primary_key: true, extra: :auto_increment
+  t.boolean :is_singleton
+  t.int :item_id
+  t.varchar :location_flag
+  t.int :location_id
+  t.varchar :location_type
+  t.int :quantity
+  t.int :type_id
+  t.datetime :created_at
+  t.datetime :updated_at
+end
+
 create_table :corporations, collate: "utf8_bin" do |t|
   t.int :corporation_id, primary_key: true
   t.varchar :corporation_name
