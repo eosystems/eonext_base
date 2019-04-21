@@ -12,7 +12,7 @@
 #  sign_in_count     :integer          default(0), not null
 #  login_token       :string(255)
 #  access_token      :string(255)
-#  refresh_token     :string(255)
+#  refresh_token     :text(65535)
 #  expire            :datetime
 #  created_at        :datetime         not null
 #  updated_at        :datetime         not null

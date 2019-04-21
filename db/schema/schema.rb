@@ -23,10 +23,11 @@ end
 
 create_table :assets, collate: "utf8_bin" do |t|
   t.int :id, primary_key: true, extra: :auto_increment
+  t.int :user_id
   t.boolean :is_singleton, null: true
-  t.int :item_id, null: true
+  t.bigint :item_id, null: true
   t.varchar :location_flag, null: true
-  t.int :location_id, null: true
+  t.bigint :location_id, null: true
   t.varchar :location_type, null: true
   t.int :quantity, null: true
   t.int :type_id, null: true
