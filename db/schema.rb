@@ -13,13 +13,13 @@
 ActiveRecord::Schema.define(version: 0) do
 
   create_table "assets", id: :integer, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT", force: :cascade do |t|
-    t.boolean "is_singleton", null: false
-    t.integer "item_id", null: false
-    t.string "location_flag", null: false
-    t.integer "location_id", null: false
-    t.string "location_type", null: false
-    t.integer "quantity", null: false
-    t.integer "type_id", null: false
+    t.boolean "is_singleton"
+    t.integer "item_id"
+    t.string "location_flag"
+    t.integer "location_id"
+    t.string "location_type"
+    t.integer "quantity"
+    t.integer "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
